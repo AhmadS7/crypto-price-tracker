@@ -1,4 +1,5 @@
 import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import type { ReactElement } from "react";
@@ -6,22 +7,36 @@ import type { ReactElement } from "react";
 const Navbar = () => {
   return (
     <>
+
       <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-        <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <Link href="/">
-            <a className="flex items-center"></a>
-          </Link>
-          <img
-            width="50"
-            height="50"
-            src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Frente_grande_logo_circular.png"
-            alt="..."
-            className="shadow rounded max-w-full h-auto align-middle border-none"
-          />
-          
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Crypto Tracker
-          </span>
+        <div className="container flex flex-wrap justify-around items-center mx-auto">
+          <div className="flex items-center justify-between">
+            <Link href="/" >
+              <a >
+                <Image
+                  width="50"
+                  height="50"
+                  src="/../public/logo.png"
+                  alt="..."
+                  className="shadow rounded max-w-full h-auto align-middle border-none"
+                />
+              </a>
+            </Link>
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Crypto Tracker</span>
+          </div>
+
+
+          {/* <a href="https://flowbite.com/" className="flex items-center">
+            <Image
+              width="50"
+              height="50"
+              src="/../public/logo.png"
+              alt="..."
+              className="shadow rounded max-w-full h-auto align-middle border-none"
+            />
+
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Crypto Tracker</span>
+          </a> */}
           <button
             data-collapse-toggle="navbar-default"
             type="button"
